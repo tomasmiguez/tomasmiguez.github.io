@@ -1,0 +1,4 @@
+baseURL = "https://tomasmiguez.github.io/"
+languageCode = "en-us"
+title = "Tomás Miguez"
+theme = 'base'
