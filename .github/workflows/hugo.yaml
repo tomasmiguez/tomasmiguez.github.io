@@ -30,7 +30,7 @@ defaults:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       HUGO_VERSION: 0.166.0
       HUGO_ENVIRONMENT: production
@@ -70,6 +70,12 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+      - name: Render CV PDF
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends fonts-roboto
+          fc-cache -f >/dev/null
+          scripts/render-pdf.sh public
       - name: Cache Save
         id: cache-save
         uses: actions/cache/save@v4
@@ -87,7 +93,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages

@@ -12,14 +12,17 @@ hugo --gc --minify    # production build into public/
 
 ## Updating the CV
 
-The HTML CV is rendered by `layouts/home.html` from `data/cv.yaml`. The PDF is built from
-the LaTeX source in the sibling `curriculum` repo and copied in as `static/cv.pdf`:
+Edit `data/cv.yaml`. It is the only source: `layouts/home.html` renders it as the landing
+page, and the deploy workflow prints that page to `public/cv.pdf` with headless Chrome via
+`scripts/render-pdf.sh`, so the PDF is regenerated on every push.
+
+To build the PDF locally (needs Chrome or Chromium on the PATH):
 
 ```sh
-cd ../curriculum && latexmk -xelatex main.tex && cp main.pdf ../tomasmiguez.github.io/static/cv.pdf
+hugo --gc --minify && scripts/render-pdf.sh public
 ```
 
-`data/cv.yaml` and `curriculum/main.tex` are kept in sync by hand.
+`hugo server` does not run that step, so `/cv.pdf` returns 404 in the dev server.
 
 ## Writing a post
 

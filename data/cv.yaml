@@ -1,5 +1,5 @@
-# CV content. Source of record for the HTML CV rendered by layouts/home.html.
-# Keep in sync with ../curriculum/main.tex, which produces static/cv.pdf.
+# CV content. Single source of truth: layouts/home.html renders it as the landing page,
+# and scripts/render-pdf.sh prints that page to cv.pdf during deploy.
 
 name:
   first: "Tomás"
