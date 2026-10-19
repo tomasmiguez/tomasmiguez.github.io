@@ -6,7 +6,7 @@
   <div class="cv-hero-inner container">
     <div>
       <h1 class="cv-name"><span class="cv-name-first">{{ $cv.name.first }}</span> <span class="cv-name-last">{{ $cv.name.last }}</span></h1>
-      <p class="cv-role">{{ $cv.role }}{{ with $cv.location }} · {{ . }}{{ end }}</p>
+      <p class="cv-role">{{ $cv.role }}</p>
     </div>
     <div class="cv-actions">
       <a class="btn btn-primary" href="{{ $pdf | relURL }}" target="_blank" rel="noopener">View PDF</a>
