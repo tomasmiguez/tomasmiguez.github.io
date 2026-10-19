@@ -63,6 +63,17 @@ h1, h2, h3 { line-height: 1.25; }
 .cv-entry-body ul { margin: 0.25rem 0 0; }
 .cv-entry-body li { margin-bottom: 0.3rem; }
 
+/* Posts */
+.post { max-width: 74ch; }
+.post-header { margin-bottom: 2rem; }
+.post-title { margin: 0 0 0.5rem; font-size: 2rem; }
+.post-meta { margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.9rem; }
+.post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.post-lead { margin: 0.75rem 0 0; font-size: 1.05rem; }
+.post-body img { max-width: 100%; height: auto; }
+.post-body pre { overflow-x: auto; }
+.post-body table { border-collapse: collapse; width: 100%; }
+
 /* ============================================================ 2. Screen theme */
 @media screen {
   :root {
@@ -154,6 +165,52 @@ h1, h2, h3 { line-height: 1.25; }
   .cv-entry-body ul { list-style: none; padding-left: 1.4rem; }
   .cv-entry-body li { position: relative; }
   .cv-entry-body li::before { content: "»"; position: absolute; left: -1.4rem; color: var(--orange); }
+
+  /* Posts: everything scoped under .post / .post-body so nothing reaches the CV or the PDF */
+  .post-title { color: var(--white); }
+  .post-title::before { content: "# "; color: var(--brown); }
+  .post-meta { color: var(--brown); }
+  .post-meta time::before { content: "» "; }
+  .post-tags a { color: var(--magenta); text-decoration: none; }
+  .post-tags a::before { content: "["; color: var(--brown); }
+  .post-tags a::after { content: "]"; color: var(--brown); }
+  .post-lead { color: var(--fg-muted); font-style: italic; }
+  .post-body { line-height: 1.7; }
+  .post-body h2, .post-body h3, .post-body h4 { color: var(--yellow); margin: 2rem 0 0.75rem; line-height: 1.3; }
+  .post-body h2 { font-size: 1.35rem; }
+  .post-body h3 { font-size: 1.15rem; }
+  .post-body h4 { font-size: 1rem; color: var(--white); }
+  .post-body h2::before { content: "## "; color: var(--brown); }
+  .post-body h3::before { content: "### "; color: var(--brown); }
+  .post-body h4::before { content: "#### "; color: var(--brown); }
+  .post-body p, .post-body ul, .post-body ol, .post-body blockquote, .post-body pre, .post-body table, .post-body figure, .post-body .highlight { margin: 0 0 1.1rem; }
+  .post-body ul { list-style: none; padding-left: 1.4rem; }
+  .post-body li { margin-bottom: 0.3rem; }
+  .post-body ul li { position: relative; }
+  .post-body ul li::before { content: "»"; position: absolute; left: -1.4rem; color: var(--orange); }
+  .post-body li > ul, .post-body li > ol { margin: 0.3rem 0 0; }
+  .post-body ol { padding-left: 1.6rem; }
+  .post-body ol li::marker { color: var(--brown); }
+  .post-body blockquote { padding: 0.25rem 0 0.25rem 1rem; border-left: 3px double var(--brown); color: var(--fg-muted); }
+  .post-body blockquote p:last-child { margin-bottom: 0; }
+  .post-body hr { border: 0; border-top: 3px double var(--brown); margin: 2rem 0; }
+  .post-body code { font-family: inherit; font-size: 0.95em; }
+  .post-body :not(pre) > code { background: #132023; color: var(--cyan-bright); padding: 0.05em 0.35em; border: 1px solid var(--rule); }
+  .post-body pre { background: #0a1113; color: var(--fg); border: 1px solid var(--rule); padding: 0.9rem 1rem; font-size: 0.9rem; line-height: 1.5; }
+  .post-body .highlight pre { margin: 0; }
+  .post-body table { font-size: 0.95rem; }
+  .post-body th, .post-body td { padding: 0.4rem 0.6rem; border: 1px solid var(--rule); text-align: left; vertical-align: top; }
+  .post-body th { color: var(--yellow); background: #0a1113; border-bottom: 3px double var(--brown); }
+  .post-body img { border: 1px solid var(--rule); }
+  .post-body figcaption { color: var(--fg-light); font-size: 0.875rem; margin-top: 0.4rem; }
+  .post-body .footnotes { margin-top: 2.5rem; padding-top: 1rem; border-top: 3px double var(--brown); font-size: 0.9rem; color: var(--fg-muted); }
+  .post-body .footnotes hr { display: none; }
+  .post-body sup a { text-decoration: none; color: var(--orange); }
+  .post-body .todo { color: var(--orange); }
+  .post-body .todo.status-done { color: var(--green); }
+  .post-body .footnote-definition { display: flex; gap: 0.6rem; align-items: baseline; margin-bottom: 0.5rem; }
+  .post-body .footnote-definition sup { font-size: 0.8em; }
+  .post-body .footnote-body p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================================ 3. Print / PDF */

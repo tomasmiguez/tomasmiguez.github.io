@@ -1,0 +1,66 @@
+#+title: Kitchen sink
+#+date: 2026-10-19
+#+draft: true
+#+tags[]: meta org-mode
+#+description: Every construct the post styles cover. A draft, so it never deploys. Delete it once real posts exist.
+
+Opening paragraph with *bold*, /italic/, =verbatim=, ~code~, a [[https://orgmode.org][link]] and a footnote.[fn:1]
+
+* Headings start at one star
+The post title is the page's =h1=, so top-level Org headings render as =h2=.
+
+** Second level
+*** Third level
+Body text after a third-level heading.
+
+* Lists
+- unordered item
+- another, with nested items
+  - nested one
+  - nested two
+
+1. ordered first
+2. ordered second
+
+* Quotes and rules
+#+begin_quote
+Live and drink. A greeting from the salt marshes of Qud.
+#+end_quote
+
+-----
+
+* Code
+Inline ~puts "hi"~ and a highlighted block:
+
+#+begin_src ruby
+class Greeter
+  def initialize(name) = @name = name
+
+  # say hello
+  def call = puts "Hello, #{@name}!"
+end
+#+end_src
+
+A plain example block:
+
+#+begin_example
+$ hugo server -D
+Web Server is available at http://localhost:1313/
+#+end_example
+
+* Tables
+| Command              | Purpose                  |
+|----------------------+--------------------------|
+| =hugo server -D=     | preview, drafts included |
+| =hugo --gc --minify= | production build         |
+
+* Org keywords
+** TODO a task heading
+** DONE a finished one
+
+* Raw HTML
+#+begin_export html
+<p>This paragraph came through an export block untouched.</p>
+#+end_export
+
+[fn:1] Footnotes land at the end of the post.

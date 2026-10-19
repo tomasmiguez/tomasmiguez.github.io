@@ -4,6 +4,16 @@ title: "Tomás Miguez"
 theme: "base"
 enableRobotsTXT: true
 
+# Org files pass export blocks through as raw HTML, so Hugo denies the format unless allowed here.
+# This list replaces the default; raw .html content files stay denied.
+security:
+  allowContent: ["! ^text/html$"]
+
+markup:
+  highlight:
+    noClasses: false   # emit classes; colours come from assets/css/syntax.css (hugo gen chromastyles)
+    lineNos: false
+
 params:
   description: "CV of Tomás Miguez, software engineer based in Buenos Aires, Argentina."
   cv:

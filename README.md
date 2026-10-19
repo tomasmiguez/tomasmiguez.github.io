@@ -34,6 +34,22 @@ Body text uses "Site Mono", a self-hosted Latin subset of Iosevka Term in `stati
 
 ## Writing a post
 
+Posts live in `content/posts/` and can be Markdown or Org:
+
 ```sh
 hugo new content posts/my-post.md
+hugo new content posts/my-post.org
+```
+
+Both archetypes start as drafts. `hugo server -D` previews drafts; production builds skip
+them, so a post goes live when `draft` is false and master is pushed. The post title is the
+page's `h1`, so body headings start at `##` in Markdown and `*` in Org. Org is rendered by
+Hugo's built-in parser (no Emacs export): headings, lists, tables, quotes, footnotes, source
+blocks and HTML export blocks work; inline LaTeX math does not. `content/posts/kitchen-sink.org`
+is a draft that exercises every styled construct.
+
+Syntax colours are `assets/css/syntax.css`, generated and overridable from `main.css`:
+
+```sh
+hugo gen chromastyles --style=monokai > assets/css/syntax.css
 ```
