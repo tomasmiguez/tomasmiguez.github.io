@@ -6,7 +6,7 @@
   <div class="cv-hero-inner container">
     <div>
       <h1 class="cv-name"><span class="cv-name-first">{{ $cv.name.first }}</span> <span class="cv-name-last">{{ $cv.name.last }}</span></h1>
-      <p class="cv-role">{{ $cv.role }}</p>
+      <p class="cv-role">{{ $cv.role }}{{ with $cv.location }} · {{ . }}{{ end }}</p>
     </div>
     <div class="cv-actions">
       <a class="btn btn-primary" href="{{ $pdf | relURL }}" target="_blank" rel="noopener">View PDF</a>
@@ -20,7 +20,6 @@
     <section class="cv-aside-block">
       <h2>Contact info</h2>
       <ul class="cv-contact">
-        {{- with $cv.location }}<li>{{ . }}</li>{{ end }}
         {{- with $cv.email }}<li><a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
         {{- with $cv.phone }}<li><a href="tel:{{ replace . " " "" }}">{{ . }}</a></li>{{ end }}
         {{- range $cv.links }}<li><a href="{{ .url }}" target="_blank" rel="me noopener">{{ .label }}</a></li>{{ end }}
