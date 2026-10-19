@@ -1,0 +1,7 @@
+#+title: Motivation as a Software Engineer
+#+date: 2026-10-19T15:03:19-03:00
+#+draft: true
+#+tags[]:
+#+description:
+
+As I become more and more alienated from what I produce, I need to analyze thoroughly what actually works as motivation for my work. This way I can obtain a deeper understanding of what certain shifts in the industry entail for my professional wellbeing.
