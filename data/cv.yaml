@@ -76,6 +76,23 @@ education:
     title: "High school diploma, electromechanical technician"
     institution: "Philips School"
 
+publications:
+  - title: "A quantum let within the lambda calculus"
+    authors:
+      - name: "Alejandro Díaz-Caro"
+      - name: "Tomás Miguez"
+        self: true
+    year: "2026"
+    venue: "arXiv:2608.29380 [cs.LO], preprint, August 2026"
+    url: "https://arxiv.org/abs/2608.29380"
+    links:
+      - label: "abstract"
+        url: "https://arxiv.org/abs/2608.29380"
+      - label: "html"
+        url: "https://arxiv.org/html/2608.29380v1"
+      - label: "pdf"
+        url: "https://arxiv.org/pdf/2608.29380"
+
 diplomas:
   - title: "English international exams (C2)"
     note: "Cambridge English: First; Cambridge English: Advanced"

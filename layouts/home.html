@@ -78,6 +78,28 @@
       {{- end }}
     </section>
 
+    {{- with $cv.publications }}
+    <section class="cv-section">
+      <h2>Publications</h2>
+      {{- range . }}
+      {{- $p := . }}
+      <article class="cv-entry">
+        <div class="cv-entry-period">{{ $p.year }}</div>
+        <div class="cv-entry-body">
+          <h3 class="cv-entry-title">{{ with $p.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $p.title }}</a>{{ else }}{{ $p.title }}{{ end }}</h3>
+          <p class="cv-entry-meta">
+            <span class="cv-authors">{{ range $i, $a := $p.authors }}{{ if $i }}, {{ end }}{{ if $a.self }}<strong>{{ $a.name }}</strong>{{ else }}{{ $a.name }}{{ end }}{{ end }}</span>
+            {{- with $p.venue }}<span class="cv-entry-loc">{{ . }}</span>{{ end -}}
+          </p>
+          {{- with $p.links }}
+          <ul class="cv-links">{{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a></li>{{ end }}</ul>
+          {{- end }}
+        </div>
+      </article>
+      {{- end }}
+    </section>
+    {{- end }}
+
     {{- with $cv.diplomas }}
     <section class="cv-section">
       <h2>Diplomas</h2>
