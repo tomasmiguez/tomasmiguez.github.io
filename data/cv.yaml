@@ -16,7 +16,7 @@ links:
 
 intro: >-
   Passionate about programming with a strong interest in functional programming and FOSS.
-  Outside of work, I enjoy reading fantasy, playing volleyball, and cycling.
+  Outside of work, I enjoy reading fantasy, playing football and go.
 
 skills:
   - title: "Languages"
@@ -24,7 +24,7 @@ skills:
       - "Spanish (native)"
       - "English (advanced)"
   - title: "Programming languages"
-    items: ["Ruby", "JavaScript", "Python", "SQL"]
+    items: ["Ruby", "JavaScript", "Python", "SQL", "Java"]
   - title: "Frameworks"
     items: ["Angular", "AngularJS", "React"]
   - title: "Other technologies"
