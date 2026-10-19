@@ -24,18 +24,12 @@ hugo --gc --minify && scripts/render-pdf.sh public
 
 `hugo server` does not run that step, so `/cv.pdf` returns 404 in the dev server.
 
-## Skins
+## Style
 
-The look is `assets/css/main.css`. Optional skins in `assets/css/skins/` load after it when
-`params.skin` names one in `hugo.yaml` (`skin: qud` or `skin: achra`). They are screen-only,
-so the PDF always uses the print styles. Preview one without changing config:
-
-```sh
-HUGO_PARAMS_SKIN=qud hugo server -D
-HUGO_PARAMS_SKIN=achra hugo server -D
-```
-
-Both skins use "Site Mono", a self-hosted Latin subset of Iosevka Term in `static/fonts/`
+Everything visual is `assets/css/main.css`, in three layers: layout (all media), the screen
+theme (a Caves of Qud terminal look, with its palette in the custom properties at the top of
+the layer), and the print layer that becomes `cv.pdf`. Screen decorations never reach the PDF.
+Body text uses "Site Mono", a self-hosted Latin subset of Iosevka Term in `static/fonts/`
 (renamed because Iosevka's OFL licence reserves its name; licence file alongside).
 
 ## Writing a post
