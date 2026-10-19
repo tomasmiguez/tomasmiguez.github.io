@@ -1,3 +1,9 @@
+/* Self-hosted monospace used by the optional skins (assets/css/skins). Browsers only fetch
+   these when a rule actually uses the family, so the default look costs nothing. */
+@font-face { font-family: "Site Mono"; src: url("/fonts/SiteMono-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Site Mono"; src: url("/fonts/SiteMono-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Site Mono"; src: url("/fonts/SiteMono-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
 :root {
   --bg: #ffffff;
   --fg: #333333;
