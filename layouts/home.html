@@ -1,0 +1,97 @@
+{{ define "main" }}
+{{- $cv := hugo.Data.cv }}
+{{- $pdf := site.Params.cv.pdf | default "/cv.pdf" }}
+{{- $pdfName := site.Params.cv.filename | default "cv.pdf" }}
+<section class="cv-hero">
+  <div class="cv-hero-inner container">
+    <div>
+      <h1 class="cv-name"><span class="cv-name-first">{{ $cv.name.first }}</span> <span class="cv-name-last">{{ $cv.name.last }}</span></h1>
+      <p class="cv-role">{{ $cv.role }}{{ with $cv.location }} · {{ . }}{{ end }}</p>
+    </div>
+    <div class="cv-actions">
+      <a class="btn btn-primary" href="{{ $pdf | relURL }}" target="_blank" rel="noopener">View PDF</a>
+      <a class="btn" href="{{ $pdf | relURL }}" download="{{ $pdfName }}">Download PDF</a>
+    </div>
+  </div>
+</section>
+
+<div class="cv-grid container">
+  <aside class="cv-aside">
+    <section class="cv-aside-block">
+      <h2>Contact info</h2>
+      <ul class="cv-contact">
+        {{- with $cv.location }}<li>{{ . }}</li>{{ end }}
+        {{- with $cv.email }}<li><a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
+        {{- with $cv.phone }}<li><a href="tel:{{ replace . " " "" }}">{{ . }}</a></li>{{ end }}
+        {{- range $cv.links }}<li><a href="{{ .url }}" target="_blank" rel="me noopener">{{ .label }}</a></li>{{ end }}
+      </ul>
+    </section>
+    {{- range $cv.skills }}
+    <section class="cv-aside-block">
+      <h2>{{ .title }}</h2>
+      <ul class="cv-tags">{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>
+    </section>
+    {{- end }}
+  </aside>
+
+  <div class="cv-main">
+    {{- with $cv.intro }}
+    <section class="cv-section">
+      <h2>Intro</h2>
+      <p class="cv-intro">{{ . | markdownify }}</p>
+    </section>
+    {{- end }}
+
+    <section class="cv-section">
+      <h2>Work experience</h2>
+      {{- range $cv.experience }}
+      {{- $e := . }}
+      <article class="cv-entry">
+        <div class="cv-entry-period">{{ $e.period }}</div>
+        <div class="cv-entry-body">
+          <h3 class="cv-entry-title">{{ $e.organization }}</h3>
+          <p class="cv-entry-meta">
+            {{- with $e.role }}<em class="cv-entry-role">{{ . }}</em>{{ end }}
+            {{- with $e.location }}<span class="cv-entry-loc">{{ . }}</span>{{ end -}}
+          </p>
+          {{- with $e.summary }}<p>{{ . | markdownify }}</p>{{ end }}
+          {{- with $e.highlights }}
+          {{- with $e.highlights_intro }}<p>{{ . }}</p>{{ end }}
+          <ul>{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
+          {{- end }}
+        </div>
+      </article>
+      {{- end }}
+    </section>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      {{- range $cv.education }}
+      <article class="cv-entry">
+        <div class="cv-entry-period">{{ .period }}</div>
+        <div class="cv-entry-body">
+          <h3 class="cv-entry-title">{{ .title }}</h3>
+          <p class="cv-entry-meta"><span class="cv-entry-loc">{{ .institution }}</span></p>
+          {{- with .note }}<p>{{ . | markdownify }}</p>{{ end }}
+        </div>
+      </article>
+      {{- end }}
+    </section>
+
+    {{- with $cv.diplomas }}
+    <section class="cv-section">
+      <h2>Diplomas</h2>
+      {{- range . }}
+      <article class="cv-entry">
+        <div class="cv-entry-period">{{ .period }}</div>
+        <div class="cv-entry-body">
+          <h3 class="cv-entry-title">{{ .title }}</h3>
+          {{- with .note }}<p>{{ . | markdownify }}</p>{{ end }}
+        </div>
+      </article>
+      {{- end }}
+    </section>
+    {{- end }}
+  </div>
+</div>
+{{ end }}

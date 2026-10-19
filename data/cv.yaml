@@ -1,0 +1,83 @@
+# CV content. Source of record for the HTML CV rendered by layouts/home.html.
+# Keep in sync with ../curriculum/main.tex, which produces static/cv.pdf.
+
+name:
+  first: "Tomás"
+  last: "Miguez"
+role: "Software Engineer"
+location: "Buenos Aires, Argentina"
+email: "tomasmiguez99@gmail.com"
+phone: "+54 9 11 3645 3162"
+links:
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/tom%C3%A1s-miguez-a53327241"
+  - label: "GitHub"
+    url: "https://github.com/tomasmiguez"
+
+intro: >-
+  Passionate about programming with a strong interest in functional programming and FOSS.
+  Outside of work, I enjoy reading fantasy, playing volleyball, and cycling.
+
+skills:
+  - title: "Languages"
+    items:
+      - "Spanish (native)"
+      - "English (advanced)"
+  - title: "Programming languages"
+    items: ["Ruby", "JavaScript", "Python", "SQL"]
+  - title: "Frameworks"
+    items: ["Angular", "AngularJS", "React"]
+  - title: "Other technologies"
+    items: ["Linux", "Git"]
+
+experience:
+  - period: "2021 – Present"
+    organization: "Fudo"
+    location: "Ciudad Autónoma de Buenos Aires, Argentina"
+    role: "Software Engineer"
+    summary: >-
+      Implement and maintain solutions throughout the SaaS platform. Participate in
+      the design process, collaborating with an interdisciplinary team of skilled
+      professionals. Conduct code reviews to uphold standards of maintainability,
+      scalability, and extensibility. Refactor legacy code to meet these standards.
+      Contribute to the hiring process by interviewing and assessing candidates.
+    highlights_intro: "Key projects I played a significant role in include:"
+    highlights:
+      - "Developed electronic invoicing solutions for multiple regions, integrating with third-party providers and government services, enabling the acquisition of clients in new countries."
+      - "Integrated our software with existing payment solutions in the region."
+      - "Designed and maintained the architecture of both internal and client-facing APIs."
+      - "Developed infrastructure for asynchronous job processing."
+      - "Created client-facing reporting tools and enhanced back-office analytics systems."
+      - "Developed an internal chatbot used by customer support and commercial teams."
+  - period: "2018 – 2022"
+    organization: "Philips School"
+    location: "Ciudad Autónoma de Buenos Aires, Argentina"
+    role: "Teacher"
+    summary: >-
+      Taught programming and linear algebra to high school students. Programming was taught
+      using C++, and we gave a general overview of what would be an introduction to data
+      structures and algorithms at university.
+  - period: "2016 – 2018"
+    organization: "Philips School"
+    location: "Ciudad Autónoma de Buenos Aires, Argentina"
+    role: "IT Support"
+    summary: >-
+      We were tasked with keeping the institution's hardware in working condition, as
+      well as developing web services for students and families as well as faculty and
+      staff. Most of the development was done in ASP classic and SQL Server.
+
+education:
+  - period: "2018 – 2025"
+    title: "Licenciatura (Bachelor's & Master's equivalent) in Computer Science"
+    institution: "University of Buenos Aires (UBA)"
+  - period: "2018 – 2020"
+    title: "Licenciatura (Bachelor's & Master's equivalent) in Mathematics"
+    institution: "University of Buenos Aires (UBA)"
+    note: "Switched focus to Computer Science."
+  - period: "2012 – 2017"
+    title: "High school diploma, electromechanical technician"
+    institution: "Philips School"
+
+diplomas:
+  - title: "English international exams (C2)"
+    note: "Cambridge English: First; Cambridge English: Advanced"
