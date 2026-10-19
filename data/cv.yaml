@@ -14,7 +14,7 @@ links:
 
 intro: >-
   Passionate about programming with a strong interest in functional programming and FOSS.
-  Outside of work, I enjoy reading fantasy, playing football and go.
+  Outside of work, I enjoy reading fantasy, playing football and go/weiqi.
 
 skills:
   - title: "Languages"
@@ -22,7 +22,7 @@ skills:
       - "Spanish (native)"
       - "English (advanced)"
   - title: "Programming languages"
-    items: ["Ruby", "JavaScript", "Python", "SQL", "Java"]
+    items: ["Ruby", "JavaScript", "SQL", "Python", "Java"]
   - title: "Frameworks"
     items: ["Angular", "AngularJS", "React"]
   - title: "Other technologies"
@@ -32,7 +32,7 @@ experience:
   - period: "2021 – Present"
     organization: "Fudo"
     location: "Ciudad Autónoma de Buenos Aires, Argentina"
-    role: "Software Engineer"
+    role: "Senior Software Engineer"
     summary: >-
       Implement and maintain solutions throughout the SaaS platform. Participate in
       the design process, collaborating with an interdisciplinary team of skilled
@@ -43,10 +43,8 @@ experience:
     highlights:
       - "Developed electronic invoicing solutions for multiple regions, integrating with third-party providers and government services, enabling the acquisition of clients in new countries."
       - "Integrated our software with existing payment solutions in the region."
-      - "Designed and maintained the architecture of both internal and client-facing APIs."
-      - "Developed infrastructure for asynchronous job processing."
-      - "Created client-facing reporting tools and enhanced back-office analytics systems."
       - "Developed an internal chatbot used by customer support and commercial teams."
+      - "Implemented from scratch a CDC pipeline leveraging Apache Flink and Doris."
   - period: "2018 – 2022"
     organization: "Philips School"
     location: "Ciudad Autónoma de Buenos Aires, Argentina"
