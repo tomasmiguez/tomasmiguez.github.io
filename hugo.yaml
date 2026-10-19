@@ -1,4 +1,4 @@
-baseURL: "https://tomasmiguez.github.io/"
+baseURL: "https://tomasmiguez.dev/"
 locale: "en-us"
 title: "Tomás Miguez"
 theme: "base"
@@ -15,9 +15,6 @@ menus:
     - name: "CV"
       pageRef: "/"
       weight: 10
-    - name: "Posts"
-      pageRef: "/posts"
-      weight: 20
 
 caches:
   images:
